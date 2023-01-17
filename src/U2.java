@@ -1,21 +1,21 @@
 public class U2 extends Rocket {
-    U2(double cargoCarried, double cargoLimit) {
-        super();
-        this.cost = 120_000_000;
-        this.weight = 18_000;
-        this.maxWeight = 29_000;
-        this.chanceOfLaunchExplosion = 0.04 * (cargoCarried / cargoLimit);
-        this.chanceOfLandingCrash = 0.08 * (cargoCarried / cargoLimit);
+    U2() {
+        cost = 120;
+        weight = 18000;
+        maxWeight = 29000;
+        currentWeight = weight;
     }
     public boolean launch() {
-        double num = Math.random();
+        double num = Math.random() * 0.1;
+        chanceOfLaunchExplosion = 0.04 * (this.currentWeight - this.weight) / (this.maxWeight - this.weight);
         if (num > this.chanceOfLaunchExplosion) {
             return true;
         }
         return false;
     }
     public boolean land() {
-        double num = Math.random();
+        double num = Math.random() * 0.1;
+        chanceOfLandingCrash = 0.08 * (this.currentWeight - this.weight) / (this.maxWeight - this.weight);
         if (num > this.chanceOfLandingCrash) {
             return true;
         }

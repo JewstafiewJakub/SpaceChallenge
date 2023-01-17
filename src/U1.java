@@ -1,24 +1,25 @@
 import java.util.Random;
 
 public class U1 extends Rocket {
-    U1 (double cargoCarried, double cargoLimit) {
+    U1 () {
         super();
-        this.cost = 100_000_000;
-        this.weight = 10_000;
-        this.maxWeight = 18_000;
-        this.chanceOfLaunchExplosion = 0.05 * (cargoCarried / cargoLimit);
-        this.chanceOfLandingCrash = 0.001 * (cargoCarried / cargoLimit);
+        cost = 100;
+        weight = 10000;
+        maxWeight = 18000;
+        currentWeight = weight;
     }
     public boolean launch() {
-        double num = Math.random();
-        if (num > this.chanceOfLaunchExplosion) {
+        double num = Math.random() * 0.1;
+        chanceOfLaunchExplosion = 0.05 * (this.currentWeight - this.weight) / (this.maxWeight - this.weight);
+        if (num > chanceOfLaunchExplosion) {
             return true;
         }
         return false;
     }
     public boolean land() {
-        double num = Math.random();
-        if (num > this.chanceOfLandingCrash) {
+        double num = Math.random() * 0.1;
+        chanceOfLandingCrash = 0.05 * (this.currentWeight - this.weight) / (this.maxWeight - this.weight);
+        if (num > chanceOfLandingCrash) {
             return true;
         }
         return false;
