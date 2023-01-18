@@ -31,8 +31,8 @@ public class Main {
         System.out.println("Phase 1 - U2 rockets total cost: " + costU2Phase1);
         System.out.println("Phase 2 - U1 rockets total cost: " + costU1Phase2);
         System.out.println("Phase 2 - U2 rockets total cost: " + costU2Phase2);
-        System.out.println("The total cost of using U1 rockets is: " + costU1total + " million dollars");
-        System.out.println("The total cost of using U2 rockets is: " + costU2total + " million dollars");
+        System.out.println("The total cost of using U1 rockets is: " + costU1total);
+        System.out.println("The total cost of using U2 rockets is: " + costU2total);
         if (costU1total > costU2total) {
             System.out.println("It's more profitable to use U2 rockets");
         } else if (costU2total > costU1total) {

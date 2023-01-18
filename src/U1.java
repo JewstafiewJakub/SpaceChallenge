@@ -3,7 +3,7 @@ import java.util.Random;
 public class U1 extends Rocket {
     U1 () {
         super();
-        cost = 100;
+        cost = 100_000_000;
         weight = 10000;
         maxWeight = 18000;
         currentWeight = weight;

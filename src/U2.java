@@ -1,6 +1,6 @@
 public class U2 extends Rocket {
     U2() {
-        cost = 120;
+        cost = 120_000_000;
         weight = 18000;
         maxWeight = 29000;
         currentWeight = weight;
